@@ -42,8 +42,8 @@ public class EditUserStepDefs {
     }
 
     @Then("i verify if status code is {string} after edit an user")
-    public void i_verify_if_status_code_is_after_edit_an_user(Integer statusCode) {
-        Assert.assertTrue(response.statusCode() == statusCode);
+    public void i_verify_if_status_code_is_after_edit_an_user(String statusCode) {
+        Assert.assertTrue(response.statusCode() == Long.parseLong(statusCode));
     }
 
     @Then("i check if the {string} is correctly if an error exists after update user")

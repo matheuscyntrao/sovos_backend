@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import models.request.CreateUserRequest;
+import org.junit.Assert;
 import services.UserService;
 import utils.CucumberUtils;
 
@@ -28,7 +29,7 @@ public class CreateUserStepDefinitions {
 
     @Then("i verify if status code is {string} after create an user")
     public void i_verify_if_status_code_is_after_create_an_user(String statusCode) {
-        System.out.println(this.response.getBody().asString());
+        Assert.assertTrue(response.statusCode() == Long.parseLong(statusCode));
     }
 
     @Then("i check if the {string} is correctly if an error exists after create an user")
