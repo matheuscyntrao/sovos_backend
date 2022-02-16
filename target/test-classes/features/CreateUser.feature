@@ -9,7 +9,7 @@ Feature: Create users
     And i check if the "<message>" is correctly if an error exists after create an user
 
     Examples:
-      | statusCode | name                   | gender     | email                          | status   | message |
-      | 201        |  Tenali Ramakrishna    |   male     | ratheus-cyasdntrao@15ce.com    |  active  |         |
-      | 201        |  Talita Hiroshima11    |   female   | ralita-cyntrao2adfad@15ce.com  |  active  |         |
+      | statusCode | name                   | gender     | email              | status   | message |
+      | 201        |  Tenali Ramakrishna    |   male     | EMAIL_GENERATOR    |  active  |         |
+      | 201        |  Talita Hiroshima11    |   female   | EMAIL_GENERATOR    |  active  |         |
 

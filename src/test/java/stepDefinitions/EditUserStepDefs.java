@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import dataprovider.EmailGenerator;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -28,13 +29,14 @@ public class EditUserStepDefs {
 
     @When("i execute the request to create and edit an user")
     public void i_execute_the_request_to_create_and_edit_an_user() {
+        this.createUserRequest.setEmail(EmailGenerator.getEmail());
         this.response = UserService.createUser(this.createUserRequest);
     }
 
     @When("i setup data to edit an user:")
     public void i_setup_data_to_edit_an_user(DataTable dataTable) throws JsonProcessingException {
         this.userResponse = CucumberUtils.getObjectBody(this.response.getBody().asString(), CreateUserResponse.class);
-        this.updateUserRequest.setEmail(createUserRequest.getEmail());
+        this.updateUserRequest.setEmail(EmailGenerator.getEmail());
         this.updateUserRequest.setName(createUserRequest.getName());
         this.updateUserRequest.setStatus(createUserRequest.getStatus());
         this.response = UserService.updateUser(this.userResponse.getId(), this.updateUserRequest);

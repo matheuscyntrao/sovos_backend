@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import dataprovider.EmailGenerator;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,6 +20,7 @@ public class CreateUserStepDefinitions {
     @Given("i setup data to create an user:")
     public void i_setup_data_to_create_an_user(DataTable dataTable) throws JsonProcessingException {
         user = CucumberUtils.getObjectBody(dataTable, CreateUserRequest.class);
+        user.setEmail(EmailGenerator.getEmail());
         System.out.println(user);
     }
 
