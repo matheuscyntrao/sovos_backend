@@ -43,6 +43,7 @@ public class EditUserStepDefs {
 
     @Then("i verify if status code is {string} after edit an user")
     public void i_verify_if_status_code_is_after_edit_an_user(String statusCode) {
+        System.out.println(response.statusCode());
         Assert.assertTrue(response.statusCode() == Long.parseLong(statusCode));
     }
 

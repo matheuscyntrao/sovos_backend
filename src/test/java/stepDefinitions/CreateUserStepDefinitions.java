@@ -29,6 +29,7 @@ public class CreateUserStepDefinitions {
 
     @Then("i verify if status code is {string} after create an user")
     public void i_verify_if_status_code_is_after_create_an_user(String statusCode) {
+        System.out.println(response.statusCode());
         Assert.assertTrue(response.statusCode() == Long.parseLong(statusCode));
     }
 
