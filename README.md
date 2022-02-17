@@ -6,4 +6,4 @@ Abrir com alguma IDE java
 
 * Necessário maven com M2_HOME instalado globalmente: https://maven.apache.org/
 
-Basta ir na classe TestRunner, clicar com botão direito no project explorer e |> RUN
+Basta ir na classe src/test/java/runners/TestRunner, clicar com botão direito no project explorer e |> RUN
